@@ -37,7 +37,7 @@ def assistantResponse(text):
 
     #Convert text to speech
     #en-us:US Accent,en-gb:British,en-au:Australian,en-in:Indian
-    myObj = gTTS(text=text,lang='en-gb',slow=False)
+    myObj = gTTS(text=text,lang='en-us',slow=False)
 
     #Save the converted audio to a file
     myObj.save('assistant_response.mp3')
@@ -48,7 +48,7 @@ def assistantResponse(text):
 
 #A function for wake words or phrase
 def wakeWord(text):
-    WAKE_WORDS = ["hey computer","ok computer","rahul","Rahul"]
+    WAKE_WORDS = ["hey computer","ok computer","hey assistant"]
 
     text = text.lower()
 
@@ -103,7 +103,7 @@ def farewell(text):
     FAREWELL_INPUTS=['bye','goodbye','farewell']
 
     #Greeting responses
-    FAREWELL_RESPONSES=['Farewell greetings from Rahul Hegde']
+    FAREWELL_RESPONSES=['farewell']
 
     #If the users input is a farewell, then return a farewell response
     for word in text.split():
